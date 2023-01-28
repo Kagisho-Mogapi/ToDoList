@@ -23,7 +23,7 @@ namespace ToDoList.Controllers
             return await _context.Todos.ToListAsync();
         }
 
-        [HttpGet("Get By Id")]
+        [HttpGet("details/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var todo = await _context.Todos.FindAsync(id);
@@ -43,7 +43,7 @@ namespace ToDoList.Controllers
             return CreatedAtAction(nameof(Create), todo);
         }
 
-        [HttpPut("Update")]
+        [HttpPut("Update/{id}")]
         public async Task<IActionResult> Update(int id,Todo todo)
         {
             if (todo.Id != id)
@@ -55,7 +55,7 @@ namespace ToDoList.Controllers
             return Ok();
         }
 
-        [HttpDelete("Delete")]
+        [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var todo = _context.Todos.Find(id);
