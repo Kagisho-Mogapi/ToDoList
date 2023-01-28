@@ -29,7 +29,7 @@ if(responseMessage.IsSuccessStatusCode)
         Console.WriteLine("5. Delete a Todo");
         Console.WriteLine("100. Close Todo interface");
         choice = int.Parse(Console.ReadLine());
-        TodoDets issue1 = new();
+        TodoDets todo = new();
 
         switch(choice)
         {
